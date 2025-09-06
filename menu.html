@@ -333,7 +333,7 @@
                 </g>
             </svg>
             <h1 class="app-title">CMR Pulse</h1>
-        </div>
+    </div>
         <nav class="nav">
             <ul class="nav-list">
                 <!-- Main Section -->
@@ -341,18 +341,18 @@
                     <div class="section-title">Main</div>
                     <ul class="nav-items">
                          <li class="nav-item">
-                             <a href="javascript:void(0)" onclick="navigateToForm('Dashboard')" class="nav-link active" data-form="Dashboard">
+                             <a href="#" id="Dashboard" class="nav-link active">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path
                                          d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
                                          stroke-linecap="round" stroke-linejoin="round" />
-                                 </svg>
-                                 Dashboard
-                             </a>
-                         </li>
+                </svg>
+                Dashboard
+              </a>
+            </li>
                         <li class="nav-item">
-                            <a href="javascript:void(0)" onclick="navigateToForm('ReportGenerator')" class="nav-link" data-form="ReportGenerator">
+                            <a href="#" id="Report Generator" class="nav-link">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                     class="nav-icon" aria-hidden="true">
                                     <path d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" stroke-linecap="round"
@@ -372,34 +372,34 @@
                                         stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" stroke-linecap="round"
                                         stroke-linejoin="round" />
-                                </svg>
+                </svg>
                                 Settings
                                 <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-icon" aria-hidden="true">
                                     <path
                                         d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
                                         clip-rule="evenodd" fill-rule="evenodd" />
-                                </svg>
-                            </button>
+                </svg>
+              </button>
                             <div class="submenu" id="settings">
                                 <ul class="submenu-list">
                                     <li class="submenu-item">
-                                        <a href="javascript:void(0)" onclick="navigateToForm('Admin')" class="submenu-link" data-form="Admin">Admin</a>
-                                    </li>
+                                        <a href="#" id="security" class="submenu-link">Admin</a>
+                  </li>
                                     <li class="submenu-item">
-                                        <a href="javascript:void(0)" onclick="navigateToForm('Users')" class="submenu-link" data-form="Users">Users</a>
-                                    </li>
+                                        <a href="#" id="password" class="submenu-link">Users</a>
+                  </li>
                                 </ul>
                             </div>
-                        </li>
-                    </ul>
-                </li>
+                  </li>
+                </ul>
+            </li>
 
                 <!-- Useful Links Section -->
                 <li class="nav-section">
                     <div class="section-title">Useful Links</div>
                     <ul class="nav-items">
                          <li class="nav-item">
-                             <a href="javascript:void(0)" onclick="openExternalUrl('https://cmr-hub.company.com')" class="nav-link">
+                             <a href="javascript:void(0)" onclick="openExternalUrl('https://cmr-hub.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path
@@ -410,7 +410,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="javascript:void(0)" onclick="openExternalUrl('https://cp-nam.company.com')" class="nav-link">
+                             <a href="javascript:void(0)" onclick="openExternalUrl('https://cp-nam.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path
@@ -421,7 +421,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="javascript:void(0)" onclick="openExternalUrl('https://cp-emea.company.com')" class="nav-link">
+                             <a href="javascript:void(0)" onclick="openExternalUrl('https://cp-emea.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path
@@ -432,7 +432,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="javascript:void(0)" onclick="openExternalUrl('https://cp-apac.company.com')" class="nav-link">
+                             <a href="javascript:void(0)" onclick="openExternalUrl('https://cp-apac.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path
@@ -443,7 +443,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="javascript:void(0)" onclick="openExternalUrl('https://credit-approval.company.com')" class="nav-link">
+                             <a href="javascript:void(0)" onclick="openExternalUrl('https://credit-approval.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
@@ -453,7 +453,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="javascript:void(0)" onclick="openExternalUrl('https://onesource.company.com')" class="nav-link">
+                             <a href="javascript:void(0)" onclick="openExternalUrl('https://onesource.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path
@@ -463,15 +463,15 @@
                                  One Source
                              </a>
                          </li>
-                    </ul>
-                </li>
+          </ul>
+        </li>
 
                 <!-- Help Section -->
                 <li class="nav-section">
                     <div class="section-title">Help</div>
                     <ul class="nav-items">
                          <li class="nav-item">
-                             <a href="javascript:void(0)" onclick="openHelpEmail()" class="nav-link">
+                             <a href="javascript:void(0)" onclick="openHelpEmail()" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path
@@ -496,53 +496,53 @@
                                 <div class="profile-role">Administrator</div>
                             </div>
                         </div>
-                        <button class="logout-button" onclick="logout()" title="Log Out">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                class="logout-icon" aria-hidden="true">
-                                <path
-                                    d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
+                     <button id="signout" class="logout-button" title="Log Out">
+                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                             class="logout-icon" aria-hidden="true">
+                             <path
+                                 d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
+                                 stroke-linecap="round" stroke-linejoin="round" />
+                         </svg>
+                     </button>
                     </div>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
     <script>
-        // Initialize dropdown functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownButtons = document.querySelectorAll('.nav-button[data-submenu]');
+         // Initialize dropdown functionality
+         document.addEventListener('DOMContentLoaded', function () {
+             const dropdownButtons = document.querySelectorAll('.nav-button[data-submenu]');
 
-            dropdownButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const submenuId = this.getAttribute('data-submenu');
-                    const submenu = document.getElementById(submenuId);
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+             dropdownButtons.forEach(button => {
+                 button.addEventListener('click', function () {
+                     const submenuId = this.getAttribute('data-submenu');
+                     const submenu = document.getElementById(submenuId);
+                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
-                    // Close all other submenus
-                    dropdownButtons.forEach(otherButton => {
-                        if (otherButton !== this) {
-                            const otherSubmenuId = otherButton.getAttribute('data-submenu');
-                            const otherSubmenu = document.getElementById(otherSubmenuId);
-                            otherButton.setAttribute('aria-expanded', 'false');
-                            otherSubmenu.classList.remove('show');
-                        }
-                    });
+                     // Close all other submenus
+                     dropdownButtons.forEach(otherButton => {
+                         if (otherButton !== this) {
+                             const otherSubmenuId = otherButton.getAttribute('data-submenu');
+                             const otherSubmenu = document.getElementById(otherSubmenuId);
+                             otherButton.setAttribute('aria-expanded', 'false');
+                             otherSubmenu.classList.remove('show');
+                         }
+                     });
 
-                    // Toggle current submenu
-                    if (isExpanded) {
-                        this.setAttribute('aria-expanded', 'false');
-                        submenu.classList.remove('show');
-                    } else {
-                        this.setAttribute('aria-expanded', 'true');
-                        submenu.classList.add('show');
-                    }
-                });
-            });
+                     // Toggle current submenu
+                     if (isExpanded) {
+                         this.setAttribute('aria-expanded', 'false');
+                         submenu.classList.remove('show');
+                     } else {
+                         this.setAttribute('aria-expanded', 'true');
+                         submenu.classList.add('show');
+                     }
+                 });
+             });
 
-             // Handle navigation link clicks
+             // Handle navigation link clicks for visual feedback only
              const navLinks = document.querySelectorAll('.nav-link:not(.profile-link)');
              navLinks.forEach(link => {
                  link.addEventListener('click', function (e) {
@@ -558,16 +558,10 @@
 
                      // Add active class to clicked link
                      this.classList.add('active');
-
-                     // If this link has a form navigation, handle it
-                     const formName = this.getAttribute('data-form');
-                     if (formName && typeof window.navigateToForm === 'function') {
-                         window.navigateToForm(formName);
-                     }
                  });
              });
 
-            // Handle submenu link clicks
+            // Handle submenu link clicks for visual feedback only
             const submenuLinks = document.querySelectorAll('.submenu-link');
             submenuLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
@@ -585,139 +579,91 @@
 
                     // Add active class to clicked submenu link
                     this.classList.add('active');
-
-                    // If this link has a form navigation, handle it
-                    const formName = this.getAttribute('data-form');
-                    if (formName && typeof window.navigateToForm === 'function') {
-                        window.navigateToForm(formName);
-                    }
                 });
             });
-
-             // Logout function
-             window.logout = function () {
-                 try {
-                     // Method 1: Call VBA logout handler
-                     if (typeof window.external !== 'undefined' && window.external.CallFromWebView) {
-                         window.external.CallFromWebView('LOGOUT', '');
-                         return;
-                     }
-                     
-                     // Method 2: Direct VBA call
-                     if (typeof window.external !== 'undefined' && window.external.HandleLogout) {
-                         window.external.HandleLogout();
-                         return;
-                     }
-                     
-                     // Silent fallback - no messages
-                     console.log('Logout called - VBA integration required');
-                     
-                 } catch (e) {
-                     console.error('Logout error:', e);
-                 }
-             };
-
-             // Function to navigate to different forms in MS Access
-             window.navigateToForm = function(formName) {
-                 try {
-                     // Method 1: Direct VBA function call (if exposed)
-                     if (typeof window.external !== 'undefined' && window.external.NavigateToForm) {
-                         window.external.NavigateToForm(formName);
-                         return;
-                     }
-                     
-                     // Method 2: Call through generic VBA interface
-                     if (typeof window.external !== 'undefined' && window.external.CallFromWebView) {
-                         window.external.CallFromWebView('NAVIGATE', formName);
-                         return;
-                     }
-                     
-                     // Method 3: Alternative VBA call method
-                     if (typeof window.external !== 'undefined') {
-                         window.external.CallVBAFunction('NavigateToForm', formName);
-                         return;
-                     }
-                     
-                     // Method 4: Try Chrome/Edge specific method
-                     if (window.chrome && window.chrome.webview) {
-                         window.chrome.webview.postMessage({
-                             action: 'navigate',
-                             formName: formName
-                         });
-                         return;
-                     }
-                     
-                     // Silent fallback - just log to console
-                     console.log('Navigate to form: ' + formName);
-                     
-                 } catch (e) {
-                     console.error('Navigation error:', e);
-                 }
-             };
-
-             // MS Access compatible function to open external URLs
-             window.openExternalUrl = function(url) {
-                 try {
-                     // Try MS Access method first
-                     if (typeof window.external !== 'undefined' && window.external.Navigate) {
-                         window.external.Navigate(url);
-                     }
-                     // Fallback to standard methods
-                     else if (window.open) {
-                         window.open(url, '_blank');
-                     }
-                     else {
-                         window.location.href = url;
-                     }
-                 } catch (e) {
-                     // Silent fallback
-                     try {
-                         window.location.href = url;
-                     } catch (err) {
-                         console.error('Unable to open link: ' + url, err);
-                     }
-                 }
-             };
-
-             // Function to open Outlook with pre-populated email
-             window.openHelpEmail = function() {
-                 var recipient = 'support@company.com';
-                 var ccRecipient = 'it-helpdesk@company.com';
-                 var subject = 'CMR Pulse - Help Request';
-                 var body = 'Dear Support Team,%0D%0A%0D%0A' +
-                           'I need assistance with CMR Pulse application.%0D%0A%0D%0A' +
-                           'Issue Description:%0D%0A' +
-                           '[Please describe your issue here]%0D%0A%0D%0A' +
-                           'User: ' + (document.querySelector('.profile-name') ? document.querySelector('.profile-name').textContent : 'Current User') + '%0D%0A' +
-                           'Date: ' + new Date().toLocaleDateString() + '%0D%0A' +
-                           'Time: ' + new Date().toLocaleTimeString() + '%0D%0A%0D%0A' +
-                           'Thank you for your assistance.%0D%0A%0D%0A' +
-                           'Best regards';
-                 
-                 var mailtoLink = 'mailto:' + recipient + 
-                                 '?cc=' + ccRecipient +
-                                 '&subject=' + encodeURIComponent(subject) +
-                                 '&body=' + body;
-                 
-                 try {
-                     // Try MS Access method first
-                     if (typeof window.external !== 'undefined' && window.external.Navigate) {
-                         window.external.Navigate(mailtoLink);
-                     }
-                     // Fallback to standard method
-                     else {
-                         window.location.href = mailtoLink;
-                     }
-                 } catch (e) {
-                     // Silent fallback
-                     try {
-                         window.location.href = mailtoLink;
-                     } catch (err) {
-                         console.error('Unable to open email client', err);
-                     }
-                 }
-             };
          });
+
+         // Global variable to store clicked element for VBA to retrieve
+         var clickedElement = '';
+         
+         // Set up click event listener for VBA-handled elements only
+         document.addEventListener('click', function(e) {
+             var target = e.target || e.srcElement;
+             var elementId = target.getAttribute('id');
+             
+             // Only set clickedElement for VBA-handled elements (not js-handled)
+             if (elementId && !target.classList.contains('js-handled')) {
+                 clickedElement = elementId;
+                 console.log('Element clicked for VBA:', elementId);
+             }
+         });
+
+         // JavaScript functions for external links and help
+         
+         // MS Access compatible function to open external URLs
+         window.openExternalUrl = function(url) {
+             console.log('Opening external URL:', url);
+             try {
+                 // Try MS Access method first
+                 if (typeof window.external !== 'undefined' && window.external.Navigate) {
+                     window.external.Navigate(url);
+                 }
+                 // Fallback to standard methods
+                 else if (window.open) {
+                     window.open(url, '_blank');
+                 }
+                 else {
+                     window.location.href = url;
+                 }
+             } catch (e) {
+                 // Silent fallback
+                 try {
+                     window.location.href = url;
+                 } catch (err) {
+                     console.error('Unable to open link: ' + url, err);
+                 }
+             }
+         };
+
+         // Function to open Outlook with pre-populated email
+         window.openHelpEmail = function() {
+             console.log('Opening help email');
+             var recipient = 'support@company.com';
+             var ccRecipient = 'it-helpdesk@company.com';
+             var subject = 'CMR Pulse - Help Request';
+             var body = 'Dear Support Team,%0D%0A%0D%0A' +
+                       'I need assistance with CMR Pulse application.%0D%0A%0D%0A' +
+                       'Issue Description:%0D%0A' +
+                       '[Please describe your issue here]%0D%0A%0D%0A' +
+                       'User: ' + (document.querySelector('.profile-name') ? document.querySelector('.profile-name').textContent : 'Current User') + '%0D%0A' +
+                       'Date: ' + new Date().toLocaleDateString() + '%0D%0A' +
+                       'Time: ' + new Date().toLocaleTimeString() + '%0D%0A%0D%0A' +
+                       'Thank you for your assistance.%0D%0A%0D%0A' +
+                       'Best regards';
+             
+             var mailtoLink = 'mailto:' + recipient + 
+                             '?cc=' + ccRecipient +
+                             '&subject=' + encodeURIComponent(subject) +
+                             '&body=' + body;
+             
+             try {
+                 // Try MS Access method first
+                 if (typeof window.external !== 'undefined' && window.external.Navigate) {
+                     window.external.Navigate(mailtoLink);
+                 }
+                 // Fallback to standard method
+                 else {
+                     window.location.href = mailtoLink;
+                 }
+             } catch (e) {
+                 // Silent fallback
+                 try {
+                     window.location.href = mailtoLink;
+                 } catch (err) {
+                     console.error('Unable to open email client', err);
+                 }
+             }
+         };
     </script>
 </body>
 
