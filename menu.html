@@ -471,7 +471,7 @@
                     <div class="section-title">Help</div>
                     <ul class="nav-items">
                          <li class="nav-item">
-                             <a href="javascript:void(0)" onclick="openHelpEmail()" class="nav-link js-handled">
+                             <a href="#" id="help" class="nav-link">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path
@@ -625,45 +625,7 @@
              }
          };
 
-         // Function to open Outlook with pre-populated email
-         window.openHelpEmail = function() {
-             console.log('Opening help email');
-             var recipient = 'support@company.com';
-             var ccRecipient = 'it-helpdesk@company.com';
-             var subject = 'CMR Pulse - Help Request';
-             var body = 'Dear Support Team,%0D%0A%0D%0A' +
-                       'I need assistance with CMR Pulse application.%0D%0A%0D%0A' +
-                       'Issue Description:%0D%0A' +
-                       '[Please describe your issue here]%0D%0A%0D%0A' +
-                       'User: ' + (document.querySelector('.profile-name') ? document.querySelector('.profile-name').textContent : 'Current User') + '%0D%0A' +
-                       'Date: ' + new Date().toLocaleDateString() + '%0D%0A' +
-                       'Time: ' + new Date().toLocaleTimeString() + '%0D%0A%0D%0A' +
-                       'Thank you for your assistance.%0D%0A%0D%0A' +
-                       'Best regards';
-             
-             var mailtoLink = 'mailto:' + recipient + 
-                             '?cc=' + ccRecipient +
-                             '&subject=' + encodeURIComponent(subject) +
-                             '&body=' + body;
-             
-             try {
-                 // Try MS Access method first
-                 if (typeof window.external !== 'undefined' && window.external.Navigate) {
-                     window.external.Navigate(mailtoLink);
-                 }
-                 // Fallback to standard method
-                 else {
-                     window.location.href = mailtoLink;
-                 }
-             } catch (e) {
-                 // Silent fallback
-                 try {
-                     window.location.href = mailtoLink;
-                 } catch (err) {
-                     console.error('Unable to open email client', err);
-                 }
-             }
-         };
+         // Note: Help & Support is now handled by VBA
     </script>
 </body>
 
