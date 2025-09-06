@@ -33,13 +33,15 @@ Public Sub NavigateToForm(FormName As String)
             OpenFormInMainArea "frmUsers"
             
         Case Else
-            MsgBox "Form '" & FormName & "' not found or not implemented.", vbExclamation
+            ' Form not found - silent handling
+            Debug.Print "Form '" & FormName & "' not found or not implemented."
     End Select
     
     Exit Sub
     
 ErrorHandler:
-    MsgBox "Error navigating to form: " & Err.Description, vbCritical
+    ' Silent error handling
+    Debug.Print "Error navigating to form: " & Err.Description
 End Sub
 
 ' ========================================
@@ -51,7 +53,7 @@ Private Sub OpenFormInMainArea(ChildFormName As String)
     On Error GoTo ErrorHandler
     
     ' Method 1: Using Subform Control (RECOMMENDED)
-    ' Replace "SubformControl" with your actual subform control name
+    ' Main form name is 'subform' - replace "SubformControl" with your actual subform control name
     Me.SubformControl.SourceObject = ChildFormName
     Me.SubformControl.Visible = True
     
@@ -78,7 +80,8 @@ Private Sub OpenFormInMainArea(ChildFormName As String)
     Exit Sub
     
 ErrorHandler:
-    MsgBox "Error opening form '" & ChildFormName & "': " & Err.Description, vbCritical
+    ' Silent error handling
+    Debug.Print "Error opening form '" & ChildFormName & "': " & Err.Description
 End Sub
 
 ' Close current child form
@@ -124,31 +127,32 @@ Public Sub CallFromWebView(Action As String, Parameter As String)
         Case "LOGOUT"
             HandleLogout
         Case Else
-            MsgBox "Action '" & Action & "' not recognized.", vbExclamation
+            ' Action not recognized - silent handling
+            Debug.Print "Action '" & Action & "' not recognized."
     End Select
     
     Exit Sub
     
 ErrorHandler:
-    MsgBox "Error processing web view call: " & Err.Description, vbCritical
+    ' Silent error handling
+    Debug.Print "Error processing web view call: " & Err.Description
 End Sub
 
 ' Handle logout functionality
 Private Sub HandleLogout()
-    If MsgBox("Are you sure you want to log out?", vbYesNo + vbQuestion) = vbYes Then
-        ' Close all child forms
-        CloseCurrentChildForm
-        
-        ' Add your logout logic here
-        ' Examples:
-        ' - Close the application: DoCmd.Quit
-        ' - Open login form: DoCmd.OpenForm "frmLogin"
-        ' - Clear user session variables
-        
-        MsgBox "Logging out...", vbInformation
-        ' DoCmd.OpenForm "frmLogin"
-        ' DoCmd.Close acForm, Me.Name
-    End If
+    ' Silent logout - no confirmation dialog
+    ' Close all child forms
+    CloseCurrentChildForm
+    
+    ' Add your logout logic here
+    ' Examples:
+    ' - Close the application: DoCmd.Quit
+    ' - Open login form: DoCmd.OpenForm "frmLogin"
+    ' - Clear user session variables
+    
+    Debug.Print "Logging out..."
+    ' DoCmd.OpenForm "frmLogin"
+    ' DoCmd.Close acForm, Me.Name
 End Sub
 
 ' ========================================
@@ -172,7 +176,8 @@ Private Sub Form_Load()
     Exit Sub
     
 ErrorHandler:
-    MsgBox "Error loading form: " & Err.Description, vbCritical
+    ' Silent error handling
+    Debug.Print "Error loading form: " & Err.Description
 End Sub
 
 ' ========================================
@@ -263,7 +268,7 @@ Public Sub TestNavigation()
 End Sub
 
 Public Sub ShowCurrentForm()
-    MsgBox "Current form: " & Me.Tag, vbInformation
+    Debug.Print "Current form: " & Me.Tag
 End Sub
 
 Public Sub ClearCurrentForm()
@@ -289,6 +294,8 @@ End Sub
 
 ' TROUBLESHOOTING:
 ' - If forms don't load: Check form names in Select Case statement
-' - If WebView2 doesn't show: Check HTML file path and permissions
+' - If WebView2 doesn't show: Check HTML file path and permissions  
 ' - If navigation doesn't work: Verify control names match VBA code
 ' - If forms look wrong: Adjust child form properties (borders, selectors, etc.)
+' - Main form should be named 'subform' as specified
+' - All error messages are now silent (logged to Debug.Print only)
