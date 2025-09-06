@@ -1,0 +1,27 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;   /* Full height relative to the container */
+    width: 100%;    /* Ensure it fills the width */
+    overflow: hidden;
+}
+
+.sidebar {
+    position: absolute; /* Anchor it */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow-y: auto;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #111827;
+    padding: 0 1.5rem;
+
+    width: 100%;   /* Fill container width */
+    height: 100%;  /* Fill container height */
+}
