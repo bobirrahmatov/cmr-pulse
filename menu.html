@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pro Sidebar Template</title>
+    <title>CMR Pulse Sidebar</title>
     <style>
         * {
             margin: 0;
@@ -13,26 +13,32 @@
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #111827;
             color: #9ca3af;
-            height: 100vh;
+            height: 100%;
+            width: 100%;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
 
         .sidebar {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
             gap: 1.25rem;
             overflow-y: auto;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
             background-color: #111827;
             padding: 0 1.5rem;
-            width: 280px;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
         }
 
         .sidebar::before {
@@ -215,11 +221,10 @@
         .profile-section {
             margin: 0 -1.5rem;
             margin-top: auto;
-            position: sticky;
-            bottom: 0;
             background-color: #111827;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding: 1rem 1.5rem;
+            flex-shrink: 0;
         }
 
         .profile-container {
@@ -304,12 +309,58 @@
             border: 0;
         }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                max-width: 320px;
-            }
+        /* Ensure proper sizing for WebView2 control */
+        .nav {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        .nav-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            list-style: none;
+            min-height: 0;
+        }
+        
+        /* Remove any fixed heights that might cause issues */
+        .header {
+            flex-shrink: 0;
+        }
+        
+        /* Ensure no scrollbars appear on the main container */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+        
+        /* Prevent any unwanted margins or padding */
+        body {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        /* Ensure proper container sizing for MS Access WebView2 */
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
@@ -405,7 +456,7 @@
                                      <path
                                          d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
                                          stroke-linecap="round" stroke-linejoin="round" />
-                                 </svg>
+                </svg>
                                  CMR Hub
                              </a>
                          </li>
@@ -416,10 +467,10 @@
                                      <path
                                          d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
                                          stroke-linecap="round" stroke-linejoin="round" />
-                                 </svg>
+                </svg>
                                  CP NAM
                              </a>
-                         </li>
+                  </li>
                          <li class="nav-item">
                              <a href="javascript:void(0)" onclick="openExternalUrl('https://cp-emea.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -430,7 +481,7 @@
                                  </svg>
                                  CP EMEA
                              </a>
-                         </li>
+                  </li>
                          <li class="nav-item">
                              <a href="javascript:void(0)" onclick="openExternalUrl('https://cp-apac.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -438,20 +489,20 @@
                                      <path
                                          d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
                                          stroke-linecap="round" stroke-linejoin="round" />
-                                 </svg>
+                </svg>
                                  CP APAC
-                             </a>
-                         </li>
+              </a>
+            </li>
                          <li class="nav-item">
                              <a href="javascript:void(0)" onclick="openExternalUrl('https://credit-approval.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                      class="nav-icon" aria-hidden="true">
                                      <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
                                          stroke-linecap="round" stroke-linejoin="round" />
-                                 </svg>
+                </svg>
                                  Credit Approval Accelerator
-                             </a>
-                         </li>
+              </a>
+            </li>
                          <li class="nav-item">
                              <a href="javascript:void(0)" onclick="openExternalUrl('https://onesource.company.com')" class="nav-link js-handled">
                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -459,10 +510,10 @@
                                      <path
                                          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
                                          stroke-linecap="round" stroke-linejoin="round" />
-                                 </svg>
+                </svg>
                                  One Source
-                             </a>
-                         </li>
+              </a>
+            </li>
           </ul>
         </li>
 
