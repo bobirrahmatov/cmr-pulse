@@ -609,16 +609,11 @@
                          return;
                      }
                      
-                     // Fallback for testing
-                     if (confirm('Are you sure you want to log out?')) {
-                         alert('Logout functionality requires VBA integration');
-                     }
+                     // Silent fallback - no messages
+                     console.log('Logout called - VBA integration required');
                      
                  } catch (e) {
                      console.error('Logout error:', e);
-                     if (confirm('Are you sure you want to log out?')) {
-                         alert('Logout error: ' + e.message);
-                     }
                  }
              };
 
@@ -652,13 +647,11 @@
                          return;
                      }
                      
-                     // Fallback for testing
+                     // Silent fallback - just log to console
                      console.log('Navigate to form: ' + formName);
-                     alert('Navigation to ' + formName + ' form\\n(VBA integration required for full functionality)');
                      
                  } catch (e) {
                      console.error('Navigation error:', e);
-                     alert('Unable to navigate to ' + formName + ' form\\nError: ' + e.message);
                  }
              };
 
@@ -677,11 +670,11 @@
                          window.location.href = url;
                      }
                  } catch (e) {
-                     // Final fallback
+                     // Silent fallback
                      try {
                          window.location.href = url;
                      } catch (err) {
-                         alert('Unable to open link: ' + url);
+                         console.error('Unable to open link: ' + url, err);
                      }
                  }
              };
@@ -716,11 +709,11 @@
                          window.location.href = mailtoLink;
                      }
                  } catch (e) {
-                     // Final fallback
+                     // Silent fallback
                      try {
                          window.location.href = mailtoLink;
                      } catch (err) {
-                         alert('Unable to open email client. Please contact support@company.com directly.');
+                         console.error('Unable to open email client', err);
                      }
                  }
              };
