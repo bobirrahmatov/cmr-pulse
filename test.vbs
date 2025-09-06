@@ -60,13 +60,29 @@ Private Function HasEntitlement(strEntitlement As String) As Boolean
     Next varItem
 End Function
 
+Private Function GetUserRole() As String
+    ' Very basic mapping – replace with real logic from DB if available
+    If HasEntitlement("Account") Then
+        GetUserRole = "Administrator"
+    ElseIf HasEntitlement("Report Generator") Then
+        GetUserRole = "Analyst"
+    ElseIf HasEntitlement("Dashboard") Then
+        GetUserRole = "Standard User"
+    Else
+        GetUserRole = "Guest"
+    End If
+End Function
+
 ' ========================================
 ' EDGE BROWSER EVENT HANDLERS
 ' ========================================
 
 Private Sub EdgeBrowser0_DocumentComplete(URL As Variant)
     Dim sCmd As String
+    Dim sInitials As String
+    Dim sRole As String
     
+    ' --- Inject JS click interception ---
     sCmd = "var script = document.createElement('script');"
     Me.EdgeBrowser0.ExecuteJavascript sCmd
     
@@ -96,6 +112,19 @@ Private Sub EdgeBrowser0_DocumentComplete(URL As Variant)
     
     sCmd = "document.addEventListener('click', interceptClickEvent);"
     Me.EdgeBrowser0.ExecuteJavascript sCmd
+    
+    ' --- Inject Profile Info ---
+    sInitials = Left(m_strCurrentUser, 2)   ' Take first 2 letters of username
+    sRole = GetUserRole()
+    
+    Me.EdgeBrowser0.ExecuteJavascript _
+        "document.getElementById('profile-avatar').innerText = '" & sInitials & "';"
+    
+    Me.EdgeBrowser0.ExecuteJavascript _
+        "document.getElementById('profile-name').innerText = '" & m_strCurrentUser & "';"
+    
+    Me.EdgeBrowser0.ExecuteJavascript _
+        "document.getElementById('profile-role').innerText = '" & sRole & "';"
 End Sub
 
 Private Sub EdgeBrowser0_Click()
