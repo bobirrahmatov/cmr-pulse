@@ -485,29 +485,31 @@
                         </li>
                     </ul>
                 </li>
-                <li class="profile-section">
-                    <div class="profile-container">
-                        <div class="profile-info">
-                            <div class="profile-avatar" id="profile-avatar">
-                                [[USER_INITIALS]]
-                            </div>
-                            <div class="profile-details">
-                                <div class="profile-name" id="profile-name">[[USER_NAME]]</div>
-                                <div class="profile-role" id="profile-role">[[USER_ROLE]]</div>
-                            </div>
-                        </div>
-                        <button id="signout" class="logout-button" title="Log Out">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                class="logout-icon" aria-hidden="true">
-                                <path
-                                    d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </li>
             </ul>
         </nav>
+        
+        <!-- User Profile Section - Fixed at bottom -->
+        <div class="profile-section">
+            <div class="profile-container">
+                <div class="profile-info">
+                    <div class="profile-avatar" id="profile-avatar">
+                        [[USER_INITIALS]]
+                    </div>
+                    <div class="profile-details">
+                        <div class="profile-name" id="profile-name">[[USER_NAME]]</div>
+                        <div class="profile-role" id="profile-role">[[USER_ROLE]]</div>
+                    </div>
+                </div>
+                <button id="signout" class="logout-button" title="Log Out">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        class="logout-icon" aria-hidden="true">
+                        <path
+                            d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
     </div>
 
     <script>
