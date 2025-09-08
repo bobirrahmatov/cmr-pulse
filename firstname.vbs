@@ -1,14 +1,24 @@
 Sub GetFirstName()
     Dim fullName As String
+    Dim parts As Variant
     Dim firstName As String
     
     fullName = CreateObject("wscript.shell").RegRead("HKEY_CURRENT_USER\Software\Microsoft\Office\Common\UserInfo\UserName")
     
-    ' Split by comma and take the first part
-    firstName = Split(fullName, ",")(0)
+    ' Step 1: Split by comma
+    parts = Split(fullName, ",")
     
-    ' Trim in case there are extra spaces
-    firstName = Trim(firstName)
+    If UBound(parts) >= 1 Then
+        ' Step 2: Take second part (after comma)
+        firstName = Trim(parts(1))
+        
+        ' Step 3: Remove everything after space + "[" if it exists
+        If InStr(firstName, "[") > 0 Then
+            firstName = Trim(Left(firstName, InStr(firstName, "[") - 1))
+        End If
+    Else
+        firstName = fullName ' fallback in case no comma
+    End If
     
     MsgBox firstName
 End Sub
